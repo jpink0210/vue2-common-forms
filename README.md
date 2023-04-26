@@ -11,9 +11,9 @@
 
 #### 專案版本
 
-node: v12.22.12
-"node-sass": "^4.14.1",
-"sass-loader": "^10.1.1",
+- node: v12.22.12
+- "node-sass": "^4.14.1",
+- "sass-loader": "^10.1.1",
 
 [參考](https://blog.csdn.net/oowweb/article/details/115960195)
 
