@@ -9,7 +9,7 @@ responseType: "json"
 };
 
 // Create instance
-const $http = axios.create(config);
+const $https = axios.create(config);
 // const $http = axios;
 
-export default $http;
+export default $https;
