@@ -9,6 +9,15 @@
 - https interceptors, config alias
 - vue-types, sass-loader, node-sass
 
+#### 專案版本
+
+node: v12.22.12
+"node-sass": "^4.14.1",
+"sass-loader": "^10.1.1",
+
+[參考](https://blog.csdn.net/oowweb/article/details/115960195)
+
+
 ### Compiles and minifies for production
 ```
 yarn build

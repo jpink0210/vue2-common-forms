@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import $http from "./http.js";
+import $http from "@/api/https.js";
 
 export const actions = {
     exampleAPI(state, url) {
