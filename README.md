@@ -18,15 +18,9 @@
 [參考](https://blog.csdn.net/oowweb/article/details/115960195)
 
 
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
+### 如何處理要 update git repo 的問題
+- how to reinstall yarn
+yarn upgrade  vue2-common
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
