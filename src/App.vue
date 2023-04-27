@@ -14,8 +14,8 @@
         <router-link class="router-link t3" to="/plugins">plugins</router-link>
         <router-link class="router-link t3" to="/smoothslide">smoothslide</router-link>
       </div>
-    <router-view/>
     </div>
+    <router-view/>
   </div>
 </template>
 
