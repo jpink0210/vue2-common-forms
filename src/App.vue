@@ -10,13 +10,12 @@
     <div class="container">
       <div class="breadcrumbs d-flex align-items-center my-4 position-relative">
         <router-link class="router-link t3" to="/">forms</router-link>
-        <router-link class="router-link t3" to="/demo">component</router-link>
-        <router-link class="router-link t3" to="/mobile">smooth slide</router-link>
+        <router-link class="router-link t3" to="/inputs">inputs</router-link>
+        <router-link class="router-link t3" to="/plugins">plugins</router-link>
+        <router-link class="router-link t3" to="/smoothslide">smoothslide</router-link>
       </div>
     <router-view/>
-
     </div>
-    
   </div>
 </template>
 
@@ -47,6 +46,15 @@ export default {
       background-color: black;
       right: -12px;
       top: 8px;
+    }
+
+    &:nth-last-child(1) {
+      &::after {
+        content: "";
+        display: none;
+        height: 0;
+        width: 0;
+      }
     }
   }
 
