@@ -5,7 +5,31 @@
     </div>
     <ContainerSidebar class="mt-4">
       <template slot="main">
-        <div></div>
+        <div class="">
+          <div class="col-3 mt-3">
+            <p>- 基本輸入框 Input</p>
+            <TextPure
+              v-model="inputVal_1"
+              :clearable="inputVal_1.length > 0"
+              @clear="inputVal_1 = ''"
+            />
+          </div>
+          <div class="col-3 mt-3">
+            <p>- Radio</p>
+          </div>
+          <div class="col-3 mt-3">
+            <p>- CheckBox</p>
+          </div>
+          <div class="col-3 mt-3">
+            <p>- 下拉選單</p>
+          </div>
+          <div class="col-3 mt-3">
+            <p>- Tag</p>
+          </div>
+          <div class="col-3 mt-3">
+            <p>- AutoComplete 輸入框</p>
+          </div>
+        </div>
       </template>
       <template slot="sidebar">
         <div class="forms-menu bg-white rounded">
@@ -17,11 +41,17 @@
 
 <script>
 import ContainerSidebar from "components/shared/ContainerSidebar";
-
+import { TextPure } from "vue2-common";
 export default {
   name: 'Inputs',
   components: {
-    ContainerSidebar
+    ContainerSidebar,
+    TextPure
+  },
+  data() {
+    return {
+      inputVal_1: ""
+    }
   },
   mounted: function () {
   },
