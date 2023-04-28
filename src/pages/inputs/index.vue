@@ -8,7 +8,7 @@
         <div class="">
           <div class="col-3 mt-3">
             <p>- 基本輸入框 Input</p>
-            <TextPure
+            <FormInput
               v-model="inputVal_1"
               :clearable="inputVal_1.length > 0"
               @clear="inputVal_1 = ''"
@@ -41,12 +41,12 @@
 
 <script>
 import ContainerSidebar from "components/shared/ContainerSidebar";
-import { TextPure } from "vue2-common";
+import { FormInput } from "vue2-common";
 export default {
   name: 'Inputs',
   components: {
     ContainerSidebar,
-    TextPure
+    FormInput
   },
   data() {
     return {
