@@ -33,12 +33,25 @@
             </div>
           </div>
           <div class="col-3 mt-8">
+            <p>Tag</p>
+            <div class="d-flex">
+              <Tag
+                v-for="(tag, index) in demoTags"
+                :key="index"
+                :data="tag"
+                class="col-auto"
+                @deleteTag="deleteTag"
+                @click.prevent
+              />
+            </div>
+          </div>
+          <div class="col-3 mt-8">
             <p>下拉選單</p>
             <Select
               :select-options="selectOptions"
               v-model="selectValue"
               select-placeholder="點擊輸入框"
-              class="position-relative ml-2"
+              class="position-relative"
               @change="selectPureChange"
             />
           </div>
@@ -52,19 +65,6 @@
               max-tip-text="已達上限"
               select-placeholder="點擊選取"
             />
-          </div>
-          <div class="col-3 mt-8">
-            <p>Tag</p>
-            <div class="d-flex">
-              <Tag
-                v-for="(tag, index) in demoTags"
-                :key="index"
-                :data="tag"
-                class="col-auto"
-                @deleteTag="deleteTag"
-                @click.prevent
-              />
-            </div>
           </div>
           <div class="col-3 mt-8">
             <p>AutoComplete 輸入框</p>
