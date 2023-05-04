@@ -8728,7 +8728,7 @@ vue-types@^1.7.0:
 
 "vue2-common@git+ssh:git@github.com:jpink0210/vue2-common.git":
   version "0.1.0"
-  resolved "git+ssh:git@github.com:jpink0210/vue2-common.git#59f16b71aa2c1c4ff3a64ff9514edcd87eee2a26"
+  resolved "git+ssh:git@github.com:jpink0210/vue2-common.git#fc56190ad042bda1d845dbcd2b848f2dc6f3f81d"
   dependencies:
     axios "^0.19.0"
     bootstrap "4.2.1"

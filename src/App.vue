@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="bg-mt1">
+  <div id="app" class="bg-mt1 h-auto">
     <div class="white-bar w-100 bg-white py-1 px-6 d-flex align-items-center t3">
       <div class="mr-8">Paul Blog</div>
       <div class="mr-8">Vue3</div>
