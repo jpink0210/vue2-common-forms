@@ -4,7 +4,7 @@ function resolve (dir) {
 }
 module.exports = {
   publicPath: process.env.NODE_ENV === 'production'
-    ? '/sitemap/'
+    ? '/vue2-common-forms/'
     : '/',
   transpileDependencies: [/node_modules[/\\\\]vue2-common[/\\\\]/],
   chainWebpack: (config)=>{
