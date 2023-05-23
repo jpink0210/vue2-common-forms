@@ -3,6 +3,9 @@ function resolve (dir) {
     return path.join(__dirname, dir)
 }
 module.exports = {
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/sitemap/'
+    : '/',
   transpileDependencies: [/node_modules[/\\\\]vue2-common[/\\\\]/],
   chainWebpack: (config)=>{
     config.resolve.alias
