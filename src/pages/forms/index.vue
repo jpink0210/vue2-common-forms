@@ -18,7 +18,7 @@
                   @clear="$v.chiName.$model = ''"
                   :error="$v.chiName.$error"
                 >
-                  <template slot="error">必填, 字數不得超過  字</template>
+                  <template slot="error">必填, 字數不得超過 20 字</template>
                 </FormInput>
               </div>
             </template>
@@ -35,7 +35,7 @@
                   @clear="$v.engName.$model = ''"
                   :error="$v.engName.$error"
                 >
-                  <template slot="error">必填, 字數不得超過  字</template>
+                  <template slot="error">必填, 字數不得超過 40 字</template>
                 </FormInput>
               </div>
             </template>
@@ -127,6 +127,18 @@
               </div>
             </template>
           </FormsRow>
+
+          <FormsRow>
+            <template slot="title">工作用具</template>
+            <template>
+              <div class="col col-10">
+                <FormCheckbox  :localValue="tools" :value="1">平板</FormCheckbox>
+                <FormCheckbox  :localValue="tools" :value="2">雙螢幕</FormCheckbox>
+                <FormCheckbox  :localValue="tools" :value="3">繪圖板</FormCheckbox>
+                <FormCheckbox  :localValue="tools" :value="4">機械鍵盤</FormCheckbox>
+              </div>
+            </template>
+          </FormsRow>
           
      
         </div>
@@ -147,7 +159,7 @@ import ContainerSidebar from "components/shared/ContainerSidebar";
 import {
   FormInput,
   // FormRadio,
-  // FormCheckbox,
+  FormCheckbox,
   // Select,
   SelectMultiple,
   // Tag
@@ -161,6 +173,7 @@ export default {
     ContainerSidebar,
     FormsRow,
     FormInput,
+    FormCheckbox,
     SelectMultiple
   },
   validations,
@@ -175,6 +188,7 @@ export default {
       },
       drivingLicense: [{ text: "職業小型車駕照", value: 8 }, { text: "職業大貨車駕照", value: 9 }],
       transport: [{ "text": "普通小型車", "value": 4 }, { "text": "大型重型機車", "value": 3 } ],
+      tools: [],
       options: {
         drivingLicense: [
           { text: "輕型機車駕照", value: 1 },
@@ -201,6 +215,12 @@ export default {
           { text: "職業大貨車", value: 9 },
           { text: "職業大客車", value: 10 },
           { text: "職業聯結車", value: 11 },
+        ],
+        tools: [
+          { text: "平板", value: 1 },
+          { text: "雙螢幕", value: 2 },
+          { text: "繪圖板", value: 3 },
+          { text: "機械鍵盤", value: 4 },
         ]
       } 
 

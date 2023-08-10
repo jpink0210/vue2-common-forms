@@ -11,8 +11,8 @@
       <div class="breadcrumbs d-flex align-items-center my-4 position-relative">
         <router-link class="router-link t3" to="/">forms</router-link>
         <router-link class="router-link t3" to="/inputs">inputs</router-link>
-        <router-link class="router-link t3" to="/plugins">plugins</router-link>
-        <router-link class="router-link t3" to="/smoothslide">smoothslide</router-link>
+        <!-- <router-link class="router-link t3" to="/plugins">plugins</router-link> -->
+        <!-- <router-link class="router-link t3" to="/smoothslide">smoothslide</router-link> -->
       </div>
     </div>
     <router-view/>
