@@ -4,6 +4,9 @@ import router from './routes'
 import store from './store'
 
 import "common.styles/global.import.scss";
+import Vuelidate from "vuelidate";
+
+Vue.use(Vuelidate);
 
 new Vue({
   router,
