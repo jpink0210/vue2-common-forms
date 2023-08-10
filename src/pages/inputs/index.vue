@@ -17,10 +17,10 @@
           <div class="col-12 mt-8">
             <p>Input Radio</p>
             <div class="d-flex ml-4">
-              <FormRadio class="mr-4" v-model="value_radio" :value="1"> 選項一 </FormRadio>
-              <FormRadio class="mr-4" v-model="value_radio" :value="2"> 選項二 </FormRadio>
-              <FormRadio class="mr-4" v-model="value_radio" :value="3"> 選項三 </FormRadio>
-              <FormRadio class="mr-4" v-model="value_radio" :value="4"> 選項四 </FormRadio>
+              <FormRadio class="mr-4" v-model="value_radio" value="1"> 選項一 </FormRadio>
+              <FormRadio class="mr-4" v-model="value_radio" value="2"> 選項二 </FormRadio>
+              <FormRadio class="mr-4" v-model="value_radio" value="3"> 選項三 </FormRadio>
+              <FormRadio class="mr-4" v-model="value_radio" value="4"> 選項四 </FormRadio>
             </div>
           </div>
           <div class="col-12 mt-8">

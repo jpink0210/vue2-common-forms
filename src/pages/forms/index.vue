@@ -45,8 +45,8 @@
             <template slot="title">性別</template>
             <template>
               <div class="col col-10">
-                <FormRadio class="mr-4" v-model="sex" :value="1"> 男 </FormRadio>
-                <FormRadio class="mr-4" v-model="sex" :value="2"> 女 </FormRadio>
+                <FormRadio class="mr-4" v-model="sex" value="1"> 男 </FormRadio>
+                <FormRadio class="mr-4" v-model="sex" value="2"> 女 </FormRadio>
               </div>
             </template>
           </FormsRow>
@@ -150,6 +150,67 @@
             </template>
           </FormsRow>
           
+          <FormsRow>
+            <template slot="title">工作資歷</template>
+           
+          </FormsRow>
+
+          <FormsRow>
+            <template slot="title">任職期間</template>
+            <template>
+              <div class="col">
+                <div class="row">
+                  <div class="col col-3">
+                      <FormInput
+                        class="main-content__form-control"
+                        v-model="$v.duration.startYear.$model"
+                        :error="$v.duration.startYear.$error || !$v.duration.yymmDurationValid"
+                        placeholder="開始年份"
+                      >
+                        <template slot="error">
+                          <p v-if="!$v.duration.yymmDurationValid">結束時間要大於開始時間</p>
+                          <p v-else>數字介於 1960 ~ 2023</p>
+                        </template>
+                      </FormInput>
+                  </div>
+                  
+                  <div class="col col-3">
+                    <Select
+                      :select-options="options.month"
+                      v-model="$v.duration.startMonth.$model"
+                      :selectValue="[]"
+                      select-placeholder=""
+                      class="position-relative"
+                      @change="selectStartMonth"
+                    />
+                  </div>
+                  <div class="col col-3">
+                      <FormInput
+                        class="main-content__form-control"
+                        v-model="$v.duration.endYear.$model"
+                        :error="$v.duration.endYear.$error"
+                        placeholder="結束年份"
+                      >
+                        <template slot="error">
+                          <p>數字介於 1960 ~ 2023</p>
+                        </template>
+                      </FormInput>
+
+                  </div>
+                  <div class="col col-3">
+                    <Select
+                      :select-options="options.month"
+                      v-model="$v.duration.endMonth.$model"
+                      :selectValue="[]"
+                      select-placeholder=""
+                      class="position-relative"
+                      @change="selectEndMonth"
+                    />
+                  </div>
+                </div>
+              </div>
+            </template>
+          </FormsRow>
      
         </div>
       </template>
@@ -170,7 +231,7 @@ import {
   FormInput,
   FormRadio,
   FormCheckbox,
-  // Select,
+  Select,
   SelectMultiple,
   // Tag
 } from "vue2-common";
@@ -183,6 +244,7 @@ export default {
     ContainerSidebar,
     FormsRow,
     FormRadio,
+    Select,
     FormInput,
     FormCheckbox,
     SelectMultiple
@@ -200,7 +262,14 @@ export default {
       drivingLicense: [{ text: "職業小型車駕照", value: 8 }, { text: "職業大貨車駕照", value: 9 }],
       transport: [{ "text": "普通小型車", "value": 4 }, { "text": "大型重型機車", "value": 3 } ],
       tools: [],
-      sex: 1,
+      sex: "1",
+      duration: {
+        startYear: null,
+        startMonth: [{ text: "1", value: "1" }],
+        endYear: null,
+        endMonth: [{ text: "1", value: "1" }],
+      },
+      stillWork: false,
       options: {
         drivingLicense: [
           { text: "輕型機車駕照", value: 1 },
@@ -229,11 +298,25 @@ export default {
           { text: "職業聯結車", value: 11 },
         ],
         tools: [
-          { text: "平板", value: 1 },
-          { text: "雙螢幕", value: 2 },
-          { text: "繪圖板", value: 3 },
-          { text: "機械鍵盤", value: 4 },
-        ]
+          { text: "平板", value: "1" },
+          { text: "雙螢幕", value: "2" },
+          { text: "繪圖板", value: "3" },
+          { text: "機械鍵盤", value: "4" },
+        ],
+        month: [
+          { text: "1", value: "1" },
+          { text: "2", value: "2" },
+          { text: "3", value: "3" },
+          { text: "4", value: "4" },
+          { text: "5", value: "5" },
+          { text: "6", value: "6" },
+          { text: "7", value: "7" },
+          { text: "8", value: "8" },
+          { text: "9", value: "9" },
+          { text: "10", value: "10" },
+          { text: "11", value: "11" },
+          { text: "12", value: "12" },
+        ],
       } 
 
     }
@@ -241,7 +324,12 @@ export default {
   mounted: function () {
   },
   methods: {
-    
+    selectStartMonth(modal) {
+      this.duration.startMonth = [modal];
+    },
+    selectEndMonth(modal) {
+      this.duration.endMonth = [modal];
+    },
   }
 }
 </script>
@@ -260,6 +348,10 @@ export default {
           font-size: 18px;
           border-width: 2px;
 
+          &.form-input::placeholder {
+            color: $gray-600;
+
+          }
         }
       }
     }
