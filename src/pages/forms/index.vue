@@ -42,6 +42,16 @@
           </FormsRow>
 
           <FormsRow>
+            <template slot="title">性別</template>
+            <template>
+              <div class="col col-10">
+                <FormRadio class="mr-4" v-model="sex" :value="1"> 男 </FormRadio>
+                <FormRadio class="mr-4" v-model="sex" :value="2"> 女 </FormRadio>
+              </div>
+            </template>
+          </FormsRow>
+
+          <FormsRow>
             <template slot="title">手機號碼</template>
             <template>
               <div class="col col-10">
@@ -158,7 +168,7 @@ import { validations } from "./validations";
 import ContainerSidebar from "components/shared/ContainerSidebar";
 import {
   FormInput,
-  // FormRadio,
+  FormRadio,
   FormCheckbox,
   // Select,
   SelectMultiple,
@@ -172,6 +182,7 @@ export default {
   components: {
     ContainerSidebar,
     FormsRow,
+    FormRadio,
     FormInput,
     FormCheckbox,
     SelectMultiple
@@ -189,6 +200,7 @@ export default {
       drivingLicense: [{ text: "職業小型車駕照", value: 8 }, { text: "職業大貨車駕照", value: 9 }],
       transport: [{ "text": "普通小型車", "value": 4 }, { "text": "大型重型機車", "value": 3 } ],
       tools: [],
+      sex: 1,
       options: {
         drivingLicense: [
           { text: "輕型機車駕照", value: 1 },
