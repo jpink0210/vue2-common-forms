@@ -87,7 +87,47 @@
               </div>
             </template>
           </FormsRow>
-       
+
+          <FormsRow>
+            <template slot="title">駕駛執照</template>
+            <template>
+              <div class="col col-10">
+                <SelectMultiple
+                  :select-options="options.drivingLicense"
+                  class="position-relative"
+                  :max="3"
+                  max-tip-text="已達上限"
+                  select-placeholder="點擊選取"
+                  v-model="$v.drivingLicense.$model"
+                  :error="$v.drivingLicense.$error"
+                  @blur="$v.drivingLicense.$touch"
+                >
+                  <template slot="error">必填</template>
+                </SelectMultiple>
+              </div>
+            </template>
+          </FormsRow>
+
+          <FormsRow>
+            <template slot="title">交通工具</template>
+            <template>
+              <div class="col col-10">
+                <SelectMultiple
+                  :select-options="options.transport"
+                  class="position-relative"
+                  :max="2"
+                  max-tip-text="已達上限"
+                  select-placeholder="點擊選取"
+                  v-model="$v.transport.$model"
+                  :error="$v.transport.$error"
+                  @blur="$v.transport.$touch"
+                >
+                  <template slot="error">必填</template>
+                </SelectMultiple>
+              </div>
+            </template>
+          </FormsRow>
+          
      
         </div>
       </template>
@@ -96,6 +136,7 @@
         </div>
       </template>
     </ContainerSidebar>
+
   </div>
 </template>
 
@@ -108,7 +149,7 @@ import {
   // FormRadio,
   // FormCheckbox,
   // Select,
-  // SelectMultiple,
+  SelectMultiple,
   // Tag
 } from "vue2-common";
 
@@ -118,8 +159,9 @@ export default {
   name: 'Forms',
   components: {
     ContainerSidebar,
+    FormsRow,
     FormInput,
-    FormsRow
+    SelectMultiple
   },
   validations,
   data () {
@@ -131,6 +173,37 @@ export default {
         first: "",
         last: "23456789"
       },
+      drivingLicense: [{ text: "職業小型車駕照", value: 8 }, { text: "職業大貨車駕照", value: 9 }],
+      transport: [{ "text": "普通小型車", "value": 4 }, { "text": "大型重型機車", "value": 3 } ],
+      options: {
+        drivingLicense: [
+          { text: "輕型機車駕照", value: 1 },
+          { text: "普通重型機車駕照", value: 2 },
+          { text: "大型重型機車駕照", value: 3 },
+          { text: "普通小型車駕照", value: 4 },
+          { text: "普通大貨車駕照", value: 5 },
+          { text: "普通大客車駕照", value: 6 },
+          { text: "普通聯結車駕照", value: 7 },
+          { text: "職業小型車駕照", value: 8 },
+          { text: "職業大貨車駕照", value: 9 },
+          { text: "職業大客車駕照", value: 10 },
+          { text: "職業聯結車駕照", value: 11 },
+        ],
+        transport: [
+          { text: "輕型機車", value: 1 },
+          { text: "普通重型機車", value: 2 },
+          { text: "大型重型機車", value: 3 },
+          { text: "普通小型車", value: 4 },
+          { text: "普通大貨車", value: 5 },
+          { text: "普通大客車", value: 6 },
+          { text: "普通聯結車", value: 7 },
+          { text: "職業小型車", value: 8 },
+          { text: "職業大貨車", value: 9 },
+          { text: "職業大客車", value: 10 },
+          { text: "職業聯結車", value: 11 },
+        ]
+      } 
+
     }
   },
   mounted: function () {
